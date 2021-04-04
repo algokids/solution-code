@@ -39,6 +39,7 @@ public class Heap_Sort {
 			heap(arr,i);
 			System.out.println(Arrays.toString(arr));
 		}
+		
 		System.out.println("정렬 후");
 		System.out.println(Arrays.toString(arr));
 	}
