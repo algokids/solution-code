@@ -1,7 +1,7 @@
 package Baekjoon;
 
 import java.util.*;
-public class Q13163_changeToGod {
+public class Q13163_ChangeToGod {
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
