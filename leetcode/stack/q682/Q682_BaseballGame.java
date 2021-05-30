@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.stack.q682;
 
 import java.util.LinkedList;
 import java.util.PriorityQueue;

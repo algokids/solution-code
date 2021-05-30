@@ -1,3 +1,4 @@
+package baekjoon.q3055;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -11,6 +12,7 @@ import java.util.Scanner;
  *  2. 바다 먼저 증가 후에 -> 고슴도치 이동
  *  물이 고슴도치의 길을 막아도 Queue에는 이미 경로가 저장되어 있기 때문에 상관없다..
  */
+
 public class main {
 	public static Queue<position> ani;
 	public static Queue<position> water;

@@ -1,6 +1,8 @@
+package baekjoon;
+
 import java.util.Scanner;
 
-public class main7 {
+public class Bitwise_Operation {
 
 	private static String bit ="01";
 	

@@ -1,9 +1,13 @@
-package leetcode.linkedlist;
+package leetcode.linkedList.q23;
+
+// 문제 링크 : https://leetcode.com/problems/merge-k-sorted-lists/
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class Q23_MergeKSortedLists_Err {
+import leetcode.linkedList.ListNode;
+
+public class Q23_MergeKSortedLists {
 	
 
 	public static void main(String[] args) {
@@ -23,10 +27,10 @@ public class Q23_MergeKSortedLists_Err {
 		lists[1] = node2;
 		lists[2] = node3;
 		
-		Q23_MergeKSortedLists_Err ms = new Q23_MergeKSortedLists_Err();
+		Q23_MergeKSortedLists ms = new Q23_MergeKSortedLists();
 		ListNode result = ms.mergeKLists(lists);
 		
-		while(result != null) {
+		while(result.next != null) {
 			System.out.println(result.val);
 			result = result.next;
 		}
@@ -34,12 +38,14 @@ public class Q23_MergeKSortedLists_Err {
 	}
     private ListNode mergeKLists(ListNode[] lists) {
         
-    	// PriorityQueue에 담기
+    	// 오름차순 우선순위 큐
     	PriorityQueue<ListNode> queue = new PriorityQueue<ListNode>(Comp);
     	
+    	// 반환할 결과 ListNode
     	ListNode result = new ListNode(0);
-    	ListNode temp = result; 
+    	ListNode start = result; // result의 시작 노드
     	
+    	// PriorityQueue에 담기
     	for(ListNode node : lists) {
     		if(node != null) {
     			queue.offer(node);
@@ -53,15 +59,15 @@ public class Q23_MergeKSortedLists_Err {
     	while(!queue.isEmpty()) {
     		
     		ListNode node = queue.poll(); 
-    		temp.next = node;
-    		temp = temp.next;
+    		start.next = node;
+    		start = start.next;
     		
     		if(node.next != null) {
-    			queue.offer(temp.next);
+    			queue.offer(start.next);
     		}
     	}
 
-    	return result;
+    	return result.next;
     	
     }
     

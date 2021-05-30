@@ -1,4 +1,4 @@
-package Baekjoon;
+package baekjoon;
 
 import java.util.*;
 public class Q13163_ChangeToGod {

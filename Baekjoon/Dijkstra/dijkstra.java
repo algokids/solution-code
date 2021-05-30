@@ -1,3 +1,5 @@
+package baekjoon.dijkstra;
+
 import java.util.Scanner;
 
 public class dijkstra {

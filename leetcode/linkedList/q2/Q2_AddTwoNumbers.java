@@ -1,17 +1,8 @@
-package leetcode.linkedlist;
+package leetcode.linkedList.q2;
+
+import leetcode.linkedList.ListNode;
 
 // 문제링크 : https://leetcode.com/problems/add-two-numbers/
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { 
-    	this.val = val; 
-    	this.next = next; 
-    }
-}
 
 public class Q2_AddTwoNumbers {
 
