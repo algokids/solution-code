@@ -8,7 +8,7 @@ algokids 스터디 목표는 네카라쿠배 이직 성공!
 
 - 시간 : 매주 일요일 오전 11시
 
-- 장소 : Google Meeting
+- 장소 : Google Meeting (영상 통화 링크: https://meet.google.com/rkc-mctu-vzz)
 
 - 개별 : 매주 1문제씩 풀어서 풀이 과정 공유 및 발표 
 
