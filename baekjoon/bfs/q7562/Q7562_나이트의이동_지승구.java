@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.bfs.q7562;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,7 +14,7 @@ import java.util.StringTokenizer;
 // 문제 링크 : https://www.acmicpc.net/problem/7562
 // 문제 유형 : BFS
 
-public class 나이트의_이동 {
+public class Q7562_나이트의이동_지승구 {
 	public static int map[][];
 	public static boolean visit[][];
 	
