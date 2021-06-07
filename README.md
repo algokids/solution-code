@@ -30,7 +30,7 @@ algokids 스터디 목표는 네카라쿠배 이직 성공!
   <summary>2021년 06월</summary>
 
 - [0606 이슈](https://github.com/algokids/solution-code/issues/12)
-
+- [0613 이슈](https://github.com/algokids/solution-code/issues/14)
 </details>
 
 <details>
@@ -59,7 +59,7 @@ algokids 스터디 목표는 네카라쿠배 이직 성공!
 |0516|O    |O    |O    |
 |0524|O    |O    |O    |
 |0530|O    |O    |O    |
-
+|0606|O    |O    |O    |
 
 </details>
 
@@ -84,6 +84,7 @@ algokids 스터디 목표는 네카라쿠배 이직 성공!
 |0516|X    |O    |X    |
 |0524|O    |O    |O    |
 |0530|O    |X    |O    |
+|0606|O    |O    |O    |
 
 </details>
 
