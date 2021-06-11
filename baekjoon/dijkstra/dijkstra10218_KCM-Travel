@@ -1,0 +1,95 @@
+import java.io.*;
+import java.util.*;
+
+class Info_air implements Comparable<Info_air> {
+    int end;
+    int coust;
+    int time_out;
+    public Info_air(int end,int coust,int time_out){
+        this.end=end;
+        this.coust=coust;
+        this.time_out=time_out;
+    }
+    @Override
+    public int compareTo(Info_air o) {
+        return 0;
+    }
+
+}
+public class Dijkstra10217 {
+    public static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static List<Info_air>[] list;
+    public static int[] distance;
+    public static int Amount_ticket = 0;
+    public static int Amount_Account = 0;
+    private static final int INF = 100_000_000;
+    public static int transfer_count=0;
+    //각 공항으로 가는 비용을 계산하기 위한 변수
+    public static int transfer_cost[];
+    public static int dijkstra(int start) {
+        System.out.println("dijkstra method");
+        PriorityQueue<Info_air> queue = new PriorityQueue();
+        queue.offer(new Info_air(start,0,1));
+        distance[start] = 0;
+        while(!queue.isEmpty()) {
+            Info_air q = queue.poll();
+            System.out.println("q.end 는 "+q.end);
+            for(Info_air air: list[q.end]) {
+                if(!(transfer_count >= Amount_ticket)) {
+                    if (distance[air.end] > distance[q.end] + air.time_out) {
+                        System.out.println("현재 "+q.end+"까지 비용 :"+q.coust);
+                        System.out.println(q.end+" 에서 "+air.end+" 까지비용 :"+air.coust);
+                        System.out.println(q.end+" 까지 왔을때 소모되는 비용 :"+transfer_cost);
+                        if(Amount_Account >= transfer_cost[q.end]+air.coust) {
+                            distance[air.end] = distance[q.end] + air.time_out;
+                            transfer_cost[air.end] = transfer_cost[q.end]+air.coust;
+                            System.out.println("air.end : " + air.end);
+                            queue.offer(new Info_air(air.end, air.coust, air.time_out));
+                        }
+                    }
+                    System.out.println("=================================");
+                }else {
+                    System.out.println("Poor KCM");
+                    return 0;
+                }
+                transfer_count++;
+            }
+            Arrays.toString(distance);
+        }
+        return 0;
+    }
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int count = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
+        int Amount_airport = Integer.parseInt(st.nextToken());
+        Amount_Account = Integer.parseInt(st.nextToken());
+        Amount_ticket = Integer.parseInt(st.nextToken());
+
+        list = new ArrayList[Amount_airport+1];
+        distance = new int[Amount_airport+1];
+        transfer_cost = new int[Amount_airport+1];
+        Arrays.fill(transfer_cost,0);
+        Arrays.fill(distance,INF);
+        System.out.println(Arrays.toString(distance));
+        for(int i=0;i<=Amount_airport; i++) {
+            list[i] = new ArrayList<>();
+        }
+        for(int i=0; i<Amount_airport; i++) {
+            st = new StringTokenizer(br.readLine());
+            int start = Integer.parseInt(st.nextToken());
+            int end = Integer.parseInt(st.nextToken());
+            int coust = Integer.parseInt(st.nextToken());
+            int time_out = Integer.parseInt(st.nextToken());
+//            System.out.println("\nstart :"+start);
+            list[start].add(new Info_air(end,coust,time_out));
+        }
+        dijkstra(1);
+        System.out.println(Arrays.toString(distance));
+        System.out.println("transfer_count :"+transfer_count);
+        System.out.println("transfer_cost :"+Arrays.toString(transfer_cost));
+
+        System.out.println(transfer_cost[Amount_airport]==INF?transfer_cost[Amount_airport]:"Poor KCM");
+    }
+}
