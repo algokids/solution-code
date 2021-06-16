@@ -31,6 +31,7 @@ algokids 스터디 목표는 네카라쿠배 이직 성공!
 
 - [0606 이슈](https://github.com/algokids/solution-code/issues/12)
 - [0613 이슈](https://github.com/algokids/solution-code/issues/14)
+- [0620 이슈](https://github.com/algokids/solution-code/issues/15)
 </details>
 
 <details>
